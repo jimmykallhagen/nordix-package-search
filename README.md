@@ -157,6 +157,7 @@ function pacman
     end
 end
 
+## aur options        --sortby <votes|popularity|id|baseid|name|base|submitted|modified>
 function paru
     if test "$argv[1]" = "-Ss"
         nordix-paru --aur --sortby popularity $argv[2..-1]
@@ -164,6 +165,7 @@ function paru
         command paru $argv
     end
 end
+
 ```
 
 This lets you use the normal `pacman -Ss` and `paru -Ss` syntax while getting the enhanced nordix output.
