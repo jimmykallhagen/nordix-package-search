@@ -165,6 +165,7 @@ function paru
         command paru $argv
     end
 end
+```
 
 ### Bash and ZSH
 
