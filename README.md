@@ -166,7 +166,28 @@ function paru
     end
 end
 
+### Bash and ZSH
+
+```bash
+pacman() {
+    if [ "$1" = "-Ss" ]; then
+        shift
+        nordix-pacman --scroll-1 "$@"
+    else
+        command pacman "$@"
+    fi
+}
+
+paru() {
+    if [ "$1" = "-Ss" ]; then
+        shift
+        nordix-paru --aur --sortby popularity "$@"
+    else
+        command paru "$@"
+    fi
+}
 ```
+
 
 This lets you use the normal `pacman -Ss` and `paru -Ss` syntax while getting the enhanced nordix output.
 
