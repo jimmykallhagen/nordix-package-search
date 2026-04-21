@@ -196,11 +196,13 @@ This lets you use the normal `pacman -Ss` and `paru -Ss` syntax while getting th
 
 ## License
 
- * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0                            
- * [**Nordix - license**](https://polyformproject.org/licenses/noncommercial/1.0.0) 
- * Copyright (c) 2025 Jimmy Källhagen                                               
- * Part of Nordix - https://github.com/jimmykallhagen/Nordix                        
- * Nordix and Yggdrasil are trademarks of Jimmy Källhagen 
+Nordix is licensed under the **GNU General Public License, version 3 or later**
+(`SPDX-License-Identifier: GPL-3.0-or-later`).
+
+Copyright (c) 2025 The Nordix Authors.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See the [`LICENSE`](LICENSE) file or <https://www.gnu.org/licenses/gpl-3.0.html> for the full license text.
+
 
 ---
 
