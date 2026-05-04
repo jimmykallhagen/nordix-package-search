@@ -191,7 +191,7 @@ paru() {
     fi
 }
 ```
-`**"clear"** is added before nordix search, nordix-search runs clear in it self but for some reson it not works in kitty terminal`
+`clear` is added before `nordix-pacman` and `nordix-paru`, both `nordix-pacman` and `nordix-paru` runs clear in it self, but for some reson it not works in kitty terminal, this solves the problem
 
 This lets you use the normal `pacman -Ss` and `paru -Ss` syntax while getting the enhanced nordix output.
 
