@@ -1,4 +1,4 @@
-# Nordix Package Search Tools
+# ![pkg-search](/pkg-search.png) Nordix Package Search Tools
 
 Enhanced package search utilities for Arch Linux that provide a cleaner, more informative output than the default `pacman -Ss` and `paru -Ss` commands.
 
