@@ -46,13 +46,15 @@ sudo usermod -aG input $USER
 
 Create udev rule for uinput access:
 
-```bash
+```Fish
 echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
 
 Log out and back in for changes to take effect.
+
+---
 
 ## Usage
 
@@ -83,9 +85,9 @@ Example:
 nordix-paru spotify
 nordix-paru --no-size hyprland
 ```
+---
 
 ## Options
-
 | Option       | Description                                  |
 |--------------|----------------------------------------------|
 | `--scroll-0` | Disable auto-scroll                          |
@@ -132,14 +134,14 @@ aur/firefox-nightly 130.0a1-1
     Fast, Private & Safe Web Browser - Nightly build
   AUR package (size unknown until build)
 ```
-
+---
 ## How It Works
-
-1. Runs `pacman -Ss` or `paru -Ss` with your search terms
-2. Parses the output to extract package names
-3. Fetches installed sizes using `expac`
-4. Displays formatted output with separators and statistics
-5. Auto-scrolls to top so you see the header and first results
+> 1. Runs `pacman -Ss` or `paru -Ss` with your search terms
+> 2. Parses the output to extract package names
+> 3. Fetches installed sizes using `expac`
+> 4. Displays formatted output with separators and statistics
+> 5. Auto-scrolls to top so you see the header and first results
+---
 
 ## Shell Integration
 
@@ -151,16 +153,16 @@ Add to `~/.config/fish/config.fish`:
 # Nordix package search aliases
 function pacman
     if test "$argv[1]" = "-Ss"
-        nordix-pacman --scroll-1 $argv[2..-1]
+        clear; nordix-pacman --scroll-1 $argv[2..-1]
     else
         command pacman $argv
     end
 end
 
-## aur options        --sortby <votes|popularity|id|baseid|name|base|submitted|modified>
 function paru
     if test "$argv[1]" = "-Ss"
-        nordix-paru --aur --sortby popularity $argv[2..-1]
+             # aur options --sortby <votes|popularity|id|baseid|name|base|submitted|modified>
+        clear; nordix-paru --aur --sortby popularity $argv[2..-1]
     else
         command paru $argv
     end
@@ -173,7 +175,7 @@ end
 pacman() {
     if [ "$1" = "-Ss" ]; then
         shift
-        nordix-pacman --scroll-1 "$@"
+        clear; nordix-pacman --scroll-1 "$@"
     else
         command pacman "$@"
     fi
@@ -182,13 +184,14 @@ pacman() {
 paru() {
     if [ "$1" = "-Ss" ]; then
         shift
-        nordix-paru --aur --sortby popularity "$@"
+             # aur options --sortby <votes|popularity|id|baseid|name|base|submitted|modified>
+        clear; nordix-paru --aur --sortby popularity "$@"
     else
         command paru "$@"
     fi
 }
 ```
-
+**"clear"** is added before nordix search, nordix-search runs clear in it self but for some reson it not works in kitty terminal
 
 This lets you use the normal `pacman -Ss` and `paru -Ss` syntax while getting the enhanced nordix output.
 
